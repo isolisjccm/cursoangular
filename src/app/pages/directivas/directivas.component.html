@@ -1,2 +1,34 @@
-<h1>Directivas</h1>
-<hr>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-tile">Directivas estructurales</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>ngIf</h3>
+                <hr>
+                <!-- 
+                    se podria utilizar si hay datos con <div *ngIf="propiedad">
+                        si propiedad es nulo no muestra la tarjeta
+                        si propiedad tiene datos muestra la tarjeta
+                    -->
+                <div *ngIf="mostrarColegio">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ titulo }}</h5>
+                        <p class="card-text">{{ colegio }}</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" (click)=mostrarOcultar()>
+                    Mostrar/Ocultar
+                </button>
+            </div>
+            <div class="col-md-6">
+                <h3>ngFor</h3>
+                <hr>
+                <ul class="list-group">
+                    <li *ngFor="let colegio of colegios; let i = index "
+                        class="list-group-item">{{ i+1 + ' - ' +  colegio }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
