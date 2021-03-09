@@ -1,2 +1,18 @@
-<h1>Temario</h1>
-<hr>
+
+
+<div class="row">
+    <div class="alert alert-primary" role="alert">
+<!--        Me gusta: {{ contadorMeGusta }}-->
+            Me gusta: {{ temarioService.contadorMeGustaSrv }}
+    </div>
+    <div class="col-md-4"  *ngFor="let tema of temas; let i = index;">
+        <app-tarjeta
+            [dato]="tema"
+            [cabecera]="'Tema'"
+            [numero]="i +1"
+            [mostrarImagen]="true"
+            (eventoMeGusta)="eventoRecibido($event)"
+        ></app-tarjeta>
+        
+    </div>
+</div>
